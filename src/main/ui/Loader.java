@@ -9,11 +9,11 @@ import java.util.List;
 
 public class Loader {
 
-    public static void load(List<NormalBook> normalBookList,String text) throws IOException {
+    public static void load(List<Book> normalBookList, String text) throws IOException {
         List<String> lineOfStrings = Files.readAllLines(Paths.get("books.txt"));
         for (String string : lineOfStrings) {
             ArrayList<String> partsOfLine = splitOnSpace(string);
-            NormalBook b = new NormalBook("","");
+            RegularBook b = new RegularBook("","");
             b.name = partsOfLine.get(0);
             b.author = partsOfLine.get(1);
             normalBookList.add(b);

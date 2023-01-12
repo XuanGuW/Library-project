@@ -3,7 +3,7 @@ package main.ui;
 public interface Books {
     //MODIFIES: this
     //EFFECTS: add a book to the library unless it was already added, in which case do nothing
-    void addABook(NormalBook normalBook);
+    void addABook(Book normalBook);
 
     //REQUIRES: there are books in the books
     //MODIFIES: this
@@ -12,7 +12,7 @@ public interface Books {
 
 
     //EFFECTS: check if there is any book
-    boolean contains(NormalBook normalBook);
+    boolean contains(Book normalBook);
 
 
 

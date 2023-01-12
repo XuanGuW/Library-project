@@ -1,8 +1,7 @@
 package main.ui;
 
 
-
-public class NormalBook implements Book {
+public class RegularBook implements Book {
 
     public String name;
     public String author;
@@ -10,7 +9,7 @@ public class NormalBook implements Book {
     public Boolean availability;
 
 
-    public NormalBook(String name, String author) {
+    public RegularBook(String name, String author) {
         this.name = name;
         this.author = author;
         this.borrower = null;

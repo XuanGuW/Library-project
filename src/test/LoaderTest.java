@@ -1,19 +1,20 @@
-import main.ui.NormalBook;
+import main.ui.RegularBook;
 import main.ui.Library;
 import main.ui.Loader;
 import main.ui.Saver;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LoaderTest {
 
     Saver saver;
     Library library;
     Loader loader;
-    NormalBook b;
+    RegularBook b;
     String textLoad;
     String textSave;
 
@@ -23,7 +24,7 @@ public class LoaderTest {
         textSave = "bookTestSave1.text";
 
         library = new Library();
-        b = new NormalBook("ASongOfIceAndFire","GeorgeR.R.Martin");
+        b = new RegularBook("ASongOfIceAndFire","GeorgeR.R.Martin");
         library.addABook(b);
 
     }

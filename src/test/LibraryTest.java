@@ -1,5 +1,6 @@
-import main.ui.NormalBook;
+import main.ui.Book;
 import main.ui.Library;
+import main.ui.RegularBook;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class LibraryTest {
 
-    NormalBook b;
+    Book b;
     Library library;
     @BeforeEach
     public void before(){
-        b = new NormalBook("","");
+        b = new RegularBook("","");
         library = new Library();}
 
 

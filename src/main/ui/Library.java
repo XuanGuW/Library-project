@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Library implements Books {
-    public List<NormalBook> availableNormalBooks;
+    public List<Book> availableNormalBooks;
     int size;
 
     public Library() {
@@ -13,13 +13,12 @@ public class Library implements Books {
 
     }
 
-
     //MODIFIES: this
     //EFFECTS: add a book to the library unless it was already added, in which case do nothing
     @Override
-    public void addABook(NormalBook normalBook) {
-        if (!availableNormalBooks.contains(normalBook)) {
-            availableNormalBooks.add(normalBook);
+    public void addABook(Book book) {
+        if (!availableNormalBooks.contains(book)) {
+            availableNormalBooks.add(book);
         }
     }
 
@@ -30,16 +29,18 @@ public class Library implements Books {
     //EFFECTS: print out a list of books
     @Override
     public void getBooks() {
-        for (NormalBook b : availableNormalBooks) {
-            System.out.println("Book name: " + "<" + b.name + ">" + "\nAuthor's name: " + b.author);
+        for (Book b : availableNormalBooks) {
+//            System.out.println("Book name: " + "<" + b.name + ">" + "\nAuthor's name: " + b.author);
+            toString();
+
         }
     }
 
 
     //EFFECTS: check if the library contains the book
     @Override
-    public boolean contains(NormalBook normalBook) {
-        return availableNormalBooks.contains(normalBook);
+    public boolean contains(Book book) {
+        return availableNormalBooks.contains(book);
     }
 
 
@@ -48,8 +49,6 @@ public class Library implements Books {
     public int booksNumber() {
         return availableNormalBooks.size();
     }
-
-
 
 
 }

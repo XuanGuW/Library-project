@@ -1,7 +1,5 @@
-import main.ui.NormalBook;
-import main.ui.Library;
-import main.ui.Loader;
-import main.ui.Saver;
+//import main.ui.Book;
+import main.ui.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,17 +11,17 @@ public class SaverTest {
     Saver saver;
     Library library;
     Loader loader;
-    NormalBook b;
+    Book b;
     String textLoad;
     String textSave;
-    NormalBook b2;
+    Book b2;
 
     @BeforeEach
     void before(){
         library = new Library();
-        b = new NormalBook("ASongOfIceAndFire","GeorgeR.R.Martin");
+        b = new RegularBook("ASongOfIceAndFire","GeorgeR.R.Martin");
         library.addABook(b);
-        b2 = new NormalBook("HarryPotter","J.K.Rolling");
+        b2 = new RegularBook("HarryPotter","J.K.Rolling");
 
     }
 

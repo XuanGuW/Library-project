@@ -11,13 +11,16 @@ import java.util.Scanner;
 public class LibraryApplication {
 
 
+
     private Saver saver = new Saver();
     private Loader loader = new Loader();
     private Scanner scanner;
     private Library library = new Library();
-    private List<NormalBook> myNormalBooks = new ArrayList();
-    private NormalBook normalBook = new NormalBook("", "");
+    private List<RegularBook> myBooks = new ArrayList();
+    private RegularBook regularBook = new RegularBook("", "");
     private String text;
+    private Saver saveOperationsToday = new Saver();
+    private List<String> operationsToday = new ArrayList<>();
 
     public LibraryApplication() throws IOException {
         text = "books.text";
@@ -89,11 +92,11 @@ public class LibraryApplication {
 
     private void addABook() {
         System.out.println("Please enter the name of the book: ");
-        normalBook.name = scanner.nextLine();
+        regularBook.name = scanner.nextLine();
         System.out.println("Please enter the author's name: ");
-        normalBook.author = scanner.nextLine();
-        System.out.println("The book: " + "<" + normalBook.name + ">" + " is added to the library.");
-        library.addABook(normalBook);
+        regularBook.author = scanner.nextLine();
+        System.out.println("The book: " + "<" + regularBook.name + ">" + " is added to the library.");
+        library.addABook(regularBook);
 
 
 
@@ -103,35 +106,35 @@ public class LibraryApplication {
 
     private void loanABook() {
 
-        Customer customer = new Customer("", 0, myNormalBooks);
+        Customer customer = new Customer("", 0, myBooks);
         System.out.println("Please enter the name of the book: ");
-        normalBook.name = scanner.nextLine();
+        regularBook.name = scanner.nextLine();
         System.out.println("Please enter the author's name: ");
-        normalBook.author = scanner.nextLine();
+        regularBook.author = scanner.nextLine();
         System.out.println("Please enter your name: ");
         customer.name = scanner.nextLine();
         System.out.println("Please enter your phone: ");
         customer.phoneNumber = scanner.nextInt();
         System.out.println("Thank you! " + "\n You can keep the book for 20 days");
-        customer.borrow(normalBook);
+        customer.borrow(regularBook);
 
     }
 
     private void returnABook() {
 
-        Customer customer = new Customer("", 0, myNormalBooks);
+        Customer customer = new Customer("", 0, myBooks);
 
         System.out.println("Please enter the name of the book: ");
-        normalBook.name = scanner.nextLine();
+        regularBook.name = scanner.nextLine();
         System.out.println("Please enter the author's name: ");
-        normalBook.author = scanner.nextLine();
+        regularBook.author = scanner.nextLine();
         System.out.println("Please enter the name of the customer: ");
         customer.name = scanner.nextLine();
         System.out.println("Please enter the phone number of the customer: ");
         customer.phoneNumber = scanner.nextInt();
         System.out.println("This book is returned to the library. Thank you! ");
 
-        customer.returnBook(normalBook);
+        customer.returnBook(regularBook);
     }
 
 
